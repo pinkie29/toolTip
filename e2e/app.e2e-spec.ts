@@ -1,10 +1,10 @@
-import { Agular4SeedPage } from './app.po';
+import { TooltipPage } from './app.po';
 
-describe('agular4-seed App', () => {
-  let page: Agular4SeedPage;
+describe('tooltip App', () => {
+  let page: TooltipPage;
 
   beforeEach(() => {
-    page = new Agular4SeedPage();
+    page = new TooltipPage();
   });
 
   it('should display welcome message', () => {

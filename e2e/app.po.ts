@@ -1,6 +1,6 @@
 import { browser, by, element } from 'protractor';
 
-export class Agular4SeedPage {
+export class TooltipPage {
   navigateTo() {
     return browser.get('/');
   }

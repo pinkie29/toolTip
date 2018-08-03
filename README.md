@@ -1,28 +1,36 @@
-# Agular4Seed
+# Xello - Front End Testing
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.3.
 
-## Development server
+## Prerequisites
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- Node.js version 8.x or greater
+- npm version 5.x or greater
 
-## Code scaffolding
+## Getting Started
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
+1. Copy this repository by cloning it
 
-## Build
+```console
+git clone https://github.com/pinkie29/toolTip.git
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+2. Open a terminal window inside the newly created 'toolTip' folder
 
-## Running unit tests
+```console
+cd toolTip
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+3. Install the dependencies with the following command
 
-## Running end-to-end tests
+```console
+npm install
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+4. Run the development server with following command
 
-## Further help
+```console
+npm start
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+5. Go to [http://localhost:4200](http://localhost:4200) to view the webpage
