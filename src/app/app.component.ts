@@ -7,6 +7,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
-  isClassVisible: false;
+  isClassVisible:boolean = false;
+  public addHeightButtonText = 'Add height';
+
+  
+  clickEvent(){
+      this.isClassVisible = !this.isClassVisible;
+      if(this.isClassVisible) {
+        this.addHeightButtonText = 'Reduce height';
+      }
+      else {
+        this.addHeightButtonText = 'Add height';
+      }      
+  }
   
 }
