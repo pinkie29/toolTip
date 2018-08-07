@@ -1,45 +1,54 @@
 import { Directive,Input, HostListener, HostBinding,OnInit, ElementRef, Renderer2 } from '@angular/core';
+
 const ESCAPE_KEYCODE = 27;
+
 @Directive({
   selector: '[appTooltip]',  
 })
 
-
-
 export class TooltipDirective implements OnInit {
 
   @Input("appTooltip") text;
-  @HostBinding("class.tooltipButton") tooltips:boolean = false;
+  @HostBinding("class.tooltipButton") tooltipTopStyle:boolean = false;
   @HostBinding('class.tooltipButtonBottom') tooltipBottomStyle:boolean = false;
-
-  currentActive = {};
 
   @HostListener("document:click", ["$event"])
   public onClick(targetElement) {
-    if(this.elRef.nativeElement.contains(event.target)) {
-      this.tooltips = true;
-      if(!this.tooltips){
+    if(this.elRef.nativeElement.contains(event.target)) {      
+      if(!this.tooltipTopStyle && this.elRef.nativeElement.getBoundingClientRect().top < 40){
         this.tooltipBottomStyle = true;
       }
-    } else {
-      this.tooltips = false;
-      if(!this.tooltips){
+      else {
+        this.tooltipTopStyle = true;
+      }
+    } else {      
+      if(!this.tooltipTopStyle && this.elRef.nativeElement.getBoundingClientRect().top < 40){
         this.tooltipBottomStyle = false;
+      }
+      else {
+        this.tooltipTopStyle = false;
       }
     }
   }
 
   @HostListener("click", ["$event.target"])
   onMouseClick(target): void {
-    this.currentActive = target;
-    this.tooltips = true;
+    if (this.elRef.nativeElement.getBoundingClientRect().top < 40) {
+      this.tooltipBottomStyle = true;
+    }
+    else {
+      this.tooltipTopStyle = true;
+    }
   }
 
   // Closes the tooltip when the 'esc' key is pressed
   @HostListener('document:keyup', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent) {
     if (event.keyCode === ESCAPE_KEYCODE) {
-      this.tooltips = false;
+      this.tooltipTopStyle = false;
+      if(!this.tooltipTopStyle){
+        this.tooltipBottomStyle = false;
+      }
     }
   }
 
@@ -47,21 +56,21 @@ export class TooltipDirective implements OnInit {
    @HostListener("window:scroll", [])
    onWindowScroll() {  
         if (this.elRef.nativeElement.getBoundingClientRect().top < 40) { 
-          if(this.tooltips){
+          if(this.tooltipTopStyle){            
             this.tooltipBottomStyle = true;
-            this.tooltips = false;
+            this.tooltipTopStyle = false;
           } else if(this.tooltipBottomStyle) {
-              this.tooltipBottomStyle = false;
-              this.tooltips = true;
+              this.tooltipBottomStyle = true;
+              this.tooltipTopStyle = false;
             }      
         }
         else {
-          if(this.tooltips){
+          if(this.tooltipTopStyle){
             this.tooltipBottomStyle = false;
-            this.tooltips = true;
+            this.tooltipTopStyle = true;
           } else if(this.tooltipBottomStyle) {
-            this.tooltipBottomStyle = true;
-            this.tooltips = false;
+            this.tooltipBottomStyle = false;
+            this.tooltipTopStyle = true;
           }   
         }
    }

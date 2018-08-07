@@ -1,91 +1,81 @@
 $white: #fff;
-$red:#e64b50;
+$red: #e64b50;
 
 :host {
-  width:100%;
-  
+	width: 100%;
 }
-
 .toolTipWrapper {
-  border: 1px solid rgba(0,0,0,.125);
-  .row {
-    padding:20px 20px;
-  }
-  .tooltip {
-    display: none;
-  }
-  .tooltipButton {
-    position: relative;
-    display: inline-block;
-  
-    .tooltip {
-      position: absolute;
-      min-width: 130px;
-      color: $white;
-      text-align: center;
-      visibility: visible;
-      opacity:1;
-      border-radius: 6px;
-      background: $red;
-      font-size: 14px;
-      padding: 10px 10px;
-      display: block !important;
-      bottom: 45px;
-      left: 50%;
-      margin-left: -63px;
-      z-index: 999;
-      
-  
-      &:after {
-        content: "";
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        margin-left: -8px;
-        width: 0;
-        height: 0;
-        border-top: 8px solid $red;
-        border-right: 8px solid transparent;
-        border-left: 8px solid transparent;
-      }
-    }
-  }
-  
-  .tooltipButtonBottom {
-    position: relative;
-    display: inline-block;
-  
-    .tooltip {
-      position: absolute;
-      min-width: 130px;
-      color:$white;
-      text-align: center;
-      border-radius: 6px;
-      background: $red;
-      font-size: 14px;
-      padding: 10px 10px;
-      display: block !important;
-      visibility: visible;
-      opacity: 1;
-      bottom: -50px;
-      left: 50%;
-      margin-left: -76px;
-      z-index: 999;
-  
-      &:after {
-        content: "";
-        position: absolute;
-        bottom: 100%;
-        left: 50%;
-        margin-left: -8px;
-        width: 0;
-        height: 0;
-        border-bottom: 8px solid $red;
-        border-right: 8px solid transparent;
-        border-left: 8px solid transparent;
-      }
-    }
-  }
- }
-
-
+	border: 1px solid #dfdfdf;
+	.row {
+		padding: 20px 20px;
+	}
+}
+.tooltip {
+	display: none;
+}
+.tooltipButton {
+	position: relative;
+	display: inline-block;
+	.tooltip {
+		position: absolute;
+		min-width: 130px;
+		color: $white;
+		text-align: center;
+		visibility: visible;
+		opacity: 1;
+		border-radius: 6px;
+		background: $red;
+		font-size: 14px;
+		padding: 10px 10px;
+		display: block !important;
+		bottom: 45px;
+		left: 50%;
+		margin-left: -63px;
+		z-index: 999;
+		&:after {
+			content: "";
+			position: absolute;
+			top: 100%;
+			left: 50%;
+			margin-left: -8px;
+			width: 0;
+			height: 0;
+			border-top: 8px solid $red;
+			border-right: 8px solid transparent;
+			border-left: 8px solid transparent;
+		}
+	}
+}
+.tooltipButtonBottom {
+	position: relative;
+	display: inline-block;
+	.tooltip {
+		position: absolute;
+		min-width: 130px;
+		color: $white;
+		text-align: center;
+		border-radius: 6px;
+		background: $red;
+		font-size: 14px;
+		padding: 10px 10px;
+		display: block !important;
+		visibility: visible;
+		opacity: 1;
+		bottom: -50px;
+		left: 50%;
+		margin-left: -76px;
+		z-index: 999;
+		&:after {
+			content: "";
+			position: absolute;
+			bottom: 100%;
+			left: 50%;
+			margin-left: -8px;
+			width: 0;
+			height: 0;
+			border-bottom: 8px solid $red;
+			border-right: 8px solid transparent;
+			border-left: 8px solid transparent;
+		}
+	}
+}
