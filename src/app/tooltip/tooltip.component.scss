@@ -10,6 +10,9 @@ $red: #e64b50;
 		padding: 20px 20px;
 	}
 }
+.btn-info:active, .btn-info:focus {
+  box-shadow: none;
+}
 .tooltip {
 	display: none;
 }

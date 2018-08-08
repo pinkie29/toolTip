@@ -3,12 +3,12 @@ import { Directive,Input, HostListener, HostBinding,OnInit, ElementRef, Renderer
 const ESCAPE_KEYCODE = 27;
 
 @Directive({
-  selector: '[appTooltip]',  
+  selector: '[showTooltip]',  
 })
 
 export class TooltipDirective implements OnInit {
 
-  @Input("appTooltip") text;
+  @Input("showTooltip") text;
   @HostBinding("class.tooltipButton") tooltipTopStyle:boolean = false;
   @HostBinding('class.tooltipButtonBottom') tooltipBottomStyle:boolean = false;
 
